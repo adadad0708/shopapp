@@ -5,6 +5,7 @@ import { Page, Layout, EmptyState, Button, Card } from "@shopify/polaris";
 import { ResourcePicker, TitleBar } from '@shopify/app-bridge-react';
 import store from 'store-js';
 import ResourceListWithProducts from './components/ResourceList';
+import AnnotatedLayout from './components/AnnotatedLayout';
 const img = 'https://cdn.shopify.com/s/files/1/0757/9955/files/empty-state.svg';
 class Index extends React.Component {
   state = { open: false };
@@ -43,6 +44,7 @@ class Index extends React.Component {
           // Uses the new resource list that retrieves products by IDs
           <ResourceListWithProducts />
         )}
+                  <AnnotatedLayout />
       </Page>
     );
   }

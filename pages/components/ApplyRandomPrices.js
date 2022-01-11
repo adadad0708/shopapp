@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import gql from 'graphql-tag';
 import { Mutation } from 'react-apollo';
-import { Layout, Button, Banner, Toast, Stack, Frame } from '@shopify/polaris';
+import { Layout, Button, Banner, Toast, Stack, Frame, ButtonGroup } from '@shopify/polaris';
 import { Context } from '@shopify/app-bridge-react';
 // GraphQL mutation that updates the prices of products
 const UPDATE_PRICE = gql`
@@ -69,6 +69,12 @@ class ApplyRandomPrices extends React.Component {
                     >
                       Randomize prices
                     </Button>
+                    <ButtonGroup>
+  <Button
+  onClick={() => alert('Button clicked!')}
+  >Cancel</Button>
+  <Button primary>Save</Button>
+</ButtonGroup>
                   </Stack>
                 </Layout.Section>
               </Frame>

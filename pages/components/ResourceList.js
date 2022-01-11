@@ -66,7 +66,9 @@ return (
 
       return (
         <>
+               
           <Card>
+
             <ResourceList
               showHeader
               resourceName={{ singular: 'Product', plural: 'Products' }}
@@ -121,6 +123,19 @@ return (
                         });
                     }}
                   >
+                       <button
+                        id={item.id}
+                    onClick={() => {
+                    let index = this.state.selectedItems.indexOf(item.id);
+                    const node = nodesById[item.id];
+        
+                      this.state.selectedItems.splice(0, this.state.selectedItems.length);
+                        delete this.state.selectedNodes[item.id];
+                        delete this.state.selectedNodes;
+                         console.log(this.state.selectedItems);
+              
+                  }}
+                >cancel</button>
                     <Stack alignment="center">
                       <Stack.Item fill>
                         <h3>
@@ -133,6 +148,7 @@ return (
                         <p>${price}</p>
                       </Stack.Item>
                     </Stack>
+                    
                   </ResourceList.Item>
                 );
               }}
